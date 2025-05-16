@@ -1,0 +1,9 @@
+img{
+    width:275px;
+    height: 240px;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
