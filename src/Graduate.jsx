@@ -14,7 +14,7 @@ const sections = [
   },
   {
     id: "education",
-    label: "Education",
+    label: "Education",                                                                        
     content: [
       "Bachelor of Engineering in Computer Engineering, Pillai College of Engineering (2021-2024), CGPA: 7.18",
       "Specialized in Data Science, Artificial Intelligence, and Full-Stack Development.",
