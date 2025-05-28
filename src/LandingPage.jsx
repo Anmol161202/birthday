@@ -22,20 +22,21 @@ const LandingPage = () => {
     setTimeout(() => setTouchedCard(null), 200);
   };
 
-  const cardsContent = [
-    { content: "Kya disha, khud nakhun khati aur meko bolti hai.", img: "src/assets/Colaba.jpg" },
-    { content: "Shani toh tu hai", img: "src/assets/Snapchat-270284867.jpg" },
-    { content: "Tu ashi chidtana pn khub god distes", img: "src/assets/VideoCapture_20250528-133420.jpg" },
-    { content: "राणीसारखी जपायला मी राजा नाही,ओंजळीत तुझ्या प्रिये सदैव सुख देईन.", img: "src/assets/Group.jpg" },
-    { content: "Chocolate deta hu aaj mera baccha, okay?!", img: "src/assets/Chocolate.jpg" },
-    { content: "Bas zyaada jhaad pe mat chad ab, mere pe chad ", img: "src/assets/16th.jpg" },
-  ];
+ const cardsContent = [
+  { content: "Kya disha, khud nakhun khati aur meko bolti hai.", img: "https://mepteq.com/birthday/16th.jpg" },
+  { content: "Shani toh tu hai", img: " https://mepteq.com/birthday/Chocolate.jpg" },
+  { content: "Tu ashi chidtana pn khub god distes", img: "https://mepteq.com/birthday/Colaba.jpg" },
+  { content: "राणीसारखी जपायला मी राजा नाही,ओंजळीत तुझ्या प्रिये सदैव सुख देईन.", img: "https://mepteq.com/birthday/Group.jpg" },
+  { content: "Chocolate deta hu aaj mera baccha, okay?!", img: "https://mepteq.com/birthday/Snapchat-270284867.jpg" },
+  { content: "Bas zyaada jhaad pe mat chad ab, mere pe chad ", img: "https://mepteq.com/birthday/VideoCapture_20250528-133420.jpg" },
+];
+
 
   return (
     <Box
       sx={{
         minHeight: "100vh",
-        backgroundImage: `url("src/assets/test.jpeg")`,
+        backgroundImage: `url(" https://mepteq.com/birthday/test.jpeg")`,
         backgroundPosition: "center center",
         backgroundAttachment: "fixed",
         backgroundRepeat: "no-repeat",
