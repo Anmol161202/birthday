@@ -6,6 +6,7 @@ const NAVBAR_COLOR = "#001f3f";
 
 const LandingPage = () => {
   const [activeCard, setActiveCard] = useState(null);
+  const [touchedCard, setTouchedCard] = useState(null);
   const theme = useTheme();
 
   const handleOpenCard = (card) => {
@@ -16,47 +17,51 @@ const LandingPage = () => {
     setActiveCard(null);
   };
 
+  const handleCardTouch = (index) => {
+    setTouchedCard(index);
+    setTimeout(() => setTouchedCard(null), 200);
+  };
+
   const cardsContent = [
-    { content: "Card 1: Exploring React", img: "src/assets/images.jpg" },
-    { content: "Card 2: Diving into MUI", img: "src/assets/images.jpg" },
-    { content: "Card 3: Building Components", img: "src/assets/images.jpg" },
-    { content: "Card 4: State Management", img: "src/assets/images.jpg" },
-    { content: "Card 5: Framer Motion", img: "src/assets/images.jpg" },
-    { content: "Card 6: Responsive Design", img: "src/assets/images.jpg" },
+    { content: "Kya disha, khud nakhun khati aur meko bolti hai.", img: "src/assets/Colaba.jpg" },
+    { content: "Shani toh tu hai", img: "src/assets/Snapchat-270284867.jpg" },
+    { content: "Tu ashi chidtana pn khub god distes", img: "src/assets/VideoCapture_20250528-133420.jpg" },
+    { content: "राणीसारखी जपायला मी राजा नाही,ओंजळीत तुझ्या प्रिये सदैव सुख देईन.", img: "src/assets/Group.jpg" },
+    { content: "Chocolate deta hu aaj mera baccha, okay?!", img: "src/assets/Chocolate.jpg" },
+    { content: "Tujhko hai haq ke tu mujhe sataya kr,'Pata hai kya hua', yeh kehkar sab kuch bataya kr", img: "src/assets/16th.jpg" },
   ];
 
   return (
     <Box
-  sx={{
-    minHeight: "100vh",
-    backgroundImage: `url("src/assets/test.jpeg")`,
-    backgroundPosition: "center center", // Ensures the image is centered
-    backgroundAttachment: "fixed",
-    backgroundRepeat: "no-repeat",
-    backgroundSize: "cover",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    position: "relative",
-    overflow: "hidden",
-    "&::before": {
-      content: '""',
-      position: "absolute",
-      top: 0,
-      left: 0,
-      width: "100%",
-      height: "100%",
-      background: "linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3))",
-      zIndex: 1,
-    },
-  }}
->
-           
+      sx={{
+        minHeight: "100vh",
+        backgroundImage: `url("src/assets/test.jpeg")`,
+        backgroundPosition: "center center",
+        backgroundAttachment: "fixed",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        position: "relative",
+        overflow: "hidden",
+        "&::before": {
+          content: '""',
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "0%",
+          height: "0%",
+          background: "linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3))",
+          zIndex: 1,
+        },
+      }}
+    >
       {/* Circular Cards Layout */}
       <Box
         sx={{
           position: "relative",
-          zIndex: 2,
+          zIndex: 3,
           width: "400px",
           height: "400px",
           [theme.breakpoints.down("sm")]: {
@@ -67,7 +72,7 @@ const LandingPage = () => {
       >
         {cardsContent.map((card, index) => {
           const angle = (index / cardsContent.length) * 360;
-          const radius = 130;
+          const radius = 135;
           const x = radius * Math.cos((angle * Math.PI) / 180);
           const y = radius * Math.sin((angle * Math.PI) / 180);
 
@@ -86,6 +91,7 @@ const LandingPage = () => {
             >
               <Card
                 onClick={() => handleOpenCard(card)}
+                onTouchStart={() => handleCardTouch(index)}
                 sx={{
                   cursor: "pointer",
                   boxShadow: 4,
@@ -94,26 +100,43 @@ const LandingPage = () => {
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
-                  background: "white",
+                  background: "rgba(255, 255, 255, 0.3)",
+                  backdropFilter: "blur(0px)",
                   borderRadius: "50%",
+                  padding: "6px",
+                  transition: "all 0.3s ease",
+                  transform: touchedCard === index ? "scale(1.1)" : "scale(1)",
+                  boxShadow: touchedCard === index 
+                    ? "0 6px 15px rgba(0, 0, 0, 0.2)" 
+                    : "0 4px 8px rgba(0, 0, 0, 0.1)",
                   "&:hover": {
                     transform: "scale(1.1)",
                     boxShadow: "0 6px 15px rgba(0, 0, 0, 0.2)",
                   },
                 }}
               >
-                <CardContent>
-                  <motion.img
+                <Box
+                  sx={{
+                    width: "100%",
+                    height: "100%",
+                    borderRadius: "50%",
+                    overflow: "hidden",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <img
                     src={card.img}
                     alt={card.content}
                     style={{
-                      width: "65px",
-                      height: "70px",
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
                       borderRadius: "50%",
-                      boxShadow: "0 3px 10px rgba(0, 0, 0, 0.2)",
                     }}
                   />
-                </CardContent>
+                </Box>
               </Card>
             </motion.div>
           );
@@ -146,8 +169,8 @@ const LandingPage = () => {
                 background: "white",
                 borderRadius: "20px",
                 boxShadow: "0 4px 15px rgba(0, 0, 0, 0.3)",
-                maxWidth: "90%",
-                maxHeight: "90%",
+                maxWidth: "100%",
+                maxHeight: "100%",
                 width: { xs: "300px", sm: "400px" },
                 height: "auto",
                 p: theme.spacing(3),
@@ -157,23 +180,33 @@ const LandingPage = () => {
                 alignItems: "center",
               }}
             >
-              <motion.img
-                src={activeCard.img}
-                alt={activeCard.content}
-                style={{
-                  width: "100%",
-                  maxWidth: "250px",
-                  height: "auto",
-                  borderRadius: "100%",
+              <Box
+                sx={{
+                  width: "250px",
+                  height: "250px",
+                  borderRadius: "50%",
+                  overflow: "hidden",
+                  marginBottom: theme.spacing(2),
                   boxShadow: "0 4px 10px rgba(0, 0, 0, 0.3)",
                 }}
-              />
+              >
+                <img
+                  src={activeCard.img}
+                  alt={activeCard.content}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                  }}
+                />
+              </Box>
               <Typography
                 variant="body1"
                 sx={{
                   color: "#333",
                   fontSize: "1rem",
                   fontWeight: "500",
+                  marginBottom: theme.spacing(2),
                 }}
               >
                 {activeCard.content}

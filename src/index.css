@@ -1,15 +1,24 @@
-img{
-    width:275px;
-    height: 240px;
-}
 html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
-  html, body {
+  height: 100%;
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  /* box-sizing: border-box; */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
+
+img {
+  max-width: 100%;
+  height: auto; /* Ensure responsive images */
+}
+
+@media (max-width: 600px) {
+  img {
+    width: 120%; /* Images scale with the container */
+    height: auto; /* Maintain aspect ratio */
+  }
+  body {
+    padding: 0px; /* Add padding for small screens */
+  }
+}
+
 
