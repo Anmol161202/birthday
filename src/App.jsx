@@ -203,14 +203,13 @@ const App = () => {
               position: "relative",
               overflow: "hidden",
               animation: showContent ? "slideInFromLeft 1s ease-out 0.3s both" : "none",
-              transform: activeCard === 'text' 
-                ? "translateY(-15px) scale(1.02)" 
-                : "translateY(0) scale(1)",
-              boxShadow: activeCard === 'text'
-                ? "0 35px 70px rgba(0, 0, 0, 0.4)"
-                : "0 25px 50px rgba(0, 0, 0, 0.2)",
-              "&:hover": {
+              // Only apply active state transform when actively touched, let hover work normally
+              ...(activeCard === 'text' && {
                 transform: "translateY(-15px) scale(1.02)",
+                boxShadow: "0 35px 70px rgba(0, 0, 0, 0.4)",
+              }),
+              "&:hover": {
+                transform: "translateY(-15px) scale(1.05)",
                 boxShadow: "0 35px 70px rgba(0, 0, 0, 0.4)",
               },
             }}
@@ -279,19 +278,18 @@ const App = () => {
               cursor: "pointer",
               transition: "all 0.4s ease",
               animation: showContent ? "slideInFromRight 1s ease-out 0.5s both" : "none",
-              transform: activeImage 
-                ? "translateY(-15px) scale(1.02)" 
-                : "translateY(0) scale(1)",
-              boxShadow: activeImage
-                ? "0 35px 70px rgba(0, 0, 0, 0.4)"
-                : "0 25px 50px rgba(0, 0, 0, 0.3)",
+              // Only apply active state when actively touched, let hover work normally
+              ...(activeImage && {
+                transform: "translateY(-15px) scale(1.02)",
+                boxShadow: "0 35px 70px rgba(0, 0, 0, 0.4)",
+              }),
               "&:hover": {
                 transform: "translateY(-15px) scale(1.02)",
                 boxShadow: "0 35px 70px rgba(0, 0, 0, 0.4)",
               },
             }}
             tabIndex={0}
-            onClick={() => navigate("/graduate")}
+            // onClick={() => navigate("/graduate")}
           >
             <CardMedia
               component="img"

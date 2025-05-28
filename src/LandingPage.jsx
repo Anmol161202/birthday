@@ -28,7 +28,7 @@ const LandingPage = () => {
     { content: "Tu ashi chidtana pn khub god distes", img: "src/assets/VideoCapture_20250528-133420.jpg" },
     { content: "राणीसारखी जपायला मी राजा नाही,ओंजळीत तुझ्या प्रिये सदैव सुख देईन.", img: "src/assets/Group.jpg" },
     { content: "Chocolate deta hu aaj mera baccha, okay?!", img: "src/assets/Chocolate.jpg" },
-    { content: "Tujhko hai haq ke tu mujhe sataya kr,'Pata hai kya hua', yeh kehkar sab kuch bataya kr", img: "src/assets/16th.jpg" },
+    { content: "Bas zyaada jhaad pe mat chad ab, mere pe chad ", img: "src/assets/16th.jpg" },
   ];
 
   return (
