@@ -138,7 +138,7 @@ const LandingPage = () => {
         style={{
           minHeight: "100vh",
           background: `
-            linear-gradient(135deg, rgba(255, 107, 157, 0.3), rgba(0, 31, 63, 0.7)),
+            
             url("https://mepteq.com/birthday/test.jpeg")
           `,
           backgroundPosition: "center center",
@@ -168,9 +168,9 @@ const LandingPage = () => {
         />
 
         {/* Floating hearts */}
-        {[...Array(8)].map((_, i) => (
+        {/* {[...Array(8)].map((_, i) => (
           <FloatingHeart key={i} index={i} />
-        ))}
+        ))} */}
 
         {/* Birthday Title */}
         {showTitle && (
@@ -184,22 +184,22 @@ const LandingPage = () => {
             }}
           >
             <h1
-              style={{
-                fontSize: isMobile ? "2rem" : isTablet ? "2.5rem" : "3.5rem",
-                color: "white",
-                fontWeight: "bold",
-                textShadow: "2px 2px 8px rgba(0,0,0,0.7)",
-                marginBottom: "10px",
-                background: `linear-gradient(45deg, ${GOLD_COLOR}, ${ACCENT_COLOR})`,
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                gap: "15px",
-                animation: "glow 2s ease-in-out infinite alternate",
-              }}
+              // style={{
+              //   fontSize: isMobile ? "2rem" : isTablet ? "2.5rem" : "3.5rem",
+              //   color: "white",
+              //   fontWeight: "bold",
+              //   textShadow: "2px 2px 8px ",
+              //   marginBottom: "10px",
+              //   background: `linear-gradient(45deg, ${GOLD_COLOR}, ${ACCENT_COLOR})`,
+              //   WebkitBackgroundClip: "text",
+              //   WebkitTextFillColor: "transparent",
+              //   backgroundClip: "text",
+              //   display: "flex",
+              //   alignItems: "center",
+              //   justifyContent: "center",
+              //   gap: "15px",
+              //   animation: "glow 2s ease-in-out infinite alternate",
+              // }}
             >
               🎂 Happy Birthday! 🎂
             </h1>
