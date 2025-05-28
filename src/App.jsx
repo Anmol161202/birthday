@@ -291,17 +291,18 @@ const App = () => {
             tabIndex={0}
             // onClick={() => navigate("/graduate")}
           >
-            <CardMedia
-              component="img"
-              src="src/assets/Pastry.jpg"
-              alt="Birthday Celebration"
-              sx={{
-                height: "105%",
-                width: "110%",
-                objectFit: "cover",
-                borderRadius: "8px",
-              }}
-            />
+          <CardMedia
+  component="img"
+  src="https://mepteq.com/birthday/Pastry.jpg"
+  alt="Birthday Celebration"
+  sx={{
+    height: "105%",
+    width: "110%",
+    objectFit: "cover",
+    borderRadius: "8px",
+  }}
+/>
+
           </Box>
         </Grid>
       </Grid>
