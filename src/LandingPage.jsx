@@ -23,12 +23,12 @@ const LandingPage = () => {
   };
 
  const cardsContent = [
-  { content: "Kya disha, khud nakhun khati aur meko bolti hai.", img: "https://mepteq.com/birthday/16th.jpg" },
-  { content: "Shani toh tu hai", img: " https://mepteq.com/birthday/Chocolate.jpg" },
-  { content: "Tu ashi chidtana pn khub god distes", img: "https://mepteq.com/birthday/Colaba.jpg" },
+  { content: "Kya disha, khud nakhun khati aur meko bolti hai.", img: "https://mepteq.com/birthday/Colaba.jpg" },
+  { content: "Shani toh tu hai", img: "https://mepteq.com/birthday/Snapchat-270284867.jpg " },
+  { content: "Tu ashi chidtana pn khub god distes", img: "https://mepteq.com/birthday/VideoCapture_20250528-133420.jpg" },
   { content: "राणीसारखी जपायला मी राजा नाही,ओंजळीत तुझ्या प्रिये सदैव सुख देईन.", img: "https://mepteq.com/birthday/Group.jpg" },
-  { content: "Chocolate deta hu aaj mera baccha, okay?!", img: "https://mepteq.com/birthday/Snapchat-270284867.jpg" },
-  { content: "Bas zyaada jhaad pe mat chad ab, mere pe chad ", img: "https://mepteq.com/birthday/VideoCapture_20250528-133420.jpg" },
+  { content: "Chocolate deta hu aaj mera baccha, okay?!", img: "https://mepteq.com/birthday/Chocolate.jpg" },
+  { content: "Bas zyaada jhaad pe mat chad ab, mere pe chad ", img: "https://mepteq.com/birthday/16th.jpg" },
 ];
 
 
